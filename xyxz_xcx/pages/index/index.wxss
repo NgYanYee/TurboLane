@@ -4,7 +4,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 200rpx 0;
   box-sizing: border-box;
 }
 
@@ -15,5 +14,66 @@
 }
 
 .textContainer {
-  margin-top: 200px;
+  
+}
+
+.userinfo {  
+  position: relative;  
+  width: 750rpx;  
+  height: 400rpx;    
+  display: flex;  
+  flex-direction: column;  
+  align-items: center;  
+}  
+  
+.userinfo-avatar {  
+  overflow:hidden;  
+  display: block;  
+  width: 160rpx;  
+  height: 160rpx;  
+  margin: 20rpx;  
+  margin-top: 80rpx;  
+  border-radius: 50%;  
+  border: 2px solid #54a2e7;  
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);  
+}  
+  
+.userinfo{  
+  /* color: #fff; */  
+  font-size: 14px;  
+  background: linear-gradient(to bottom, #54a2e7, #1ba9ba);
+   
+}  
+
+.func-content {
+  margin: 30rpx auto;
+  width: 80%;
+}
+
+.my-icon {
+  padding-right: 50rpx;
+  width: 60rpx;
+  height: 60rpx;
+  margin-top: 3.5%;
+  
+}
+
+.func-list {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.func-list text {
+  line-height: 100rpx;
+  color: #bbb;
+  position: absolute;
+  right: 20rpx;
+}
+
+.my-messages, .my-info {
+  line-height: 100rpx;
 }

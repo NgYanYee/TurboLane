@@ -1,5 +1,6 @@
 {
   "pages": [
+    "xyxz_xcx/pages/index/index",
     "we7/pages/index/detail/detail",
     "we7/pages/index/index",
     "we7/pages/oders/orders",
@@ -8,7 +9,8 @@
   "window": {
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "酸菜鱼",
-    "navigationBarBackgroundColor": "#108ee9",
-    "backgroundColor": "#108ee9"
-  }
+    "navigationBarBackgroundColor": "#54a2e7",
+    "backgroundColor": "#54a2e7"
+  },
+  "sitemapLocation": "sitemap.json"
 }
