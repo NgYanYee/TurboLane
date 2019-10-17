@@ -1,0 +1,43 @@
+<!--we7/pages/oders/orders.wxml-->
+
+<view class='container'>
+  <view class="header">
+    <view bindtap="tabItemTap" data-view="1" wx:if="{{currentView!=1}}">
+      已发布
+    </view>
+    <view bindtap="tabItemTap" class='selected' data-view="1" wx:if="{{currentView==1}}">
+      已发布
+    </view>
+    <view bindtap="tabItemTap" data-view="2" wx:if="{{currentView!=2}}">
+      已完成
+    </view>
+    <view bindtap="tabItemTap" class='selected' data-view="2" wx:if="{{currentView==2}}">
+      已完成
+    </view>
+  </view>
+  <view class='content'>
+    <!-- <view class='item-content'>
+      <view class='content-name'>FPGQ开发版</view>
+      <view class='publish-name'>焦子豪</view>
+      <view class='content-type'>电子产品</view>
+      <view class='other-imfor'>
+        <view>2019-08-10 14:41:32</view>
+        <view>浏览| 104</view>
+      </view>
+      <view class='delete'>删除</view>
+    </view> -->
+    <view class='item-content' wx:for="{{ orders }}" wx:key="unique">
+      <view class='content-name'>{{ item.title }}</view>
+      <view class='publish-name'>{{ item.publisher }}</view>
+      <view class='content-type'>{{ item.type }}</view>
+      <view class='other-imfor'>
+        <view>{{ item.publishTime }}</view>
+        <view>浏览| {{ item.times }}</view>
+      </view>
+      <view class='other-botton'>
+        <button class='finish' hover-class='isChecked' data-id="{{item.id}}">完成</button>
+        <button class='cancel' hover-class='isCanceled' data-id="{{item.id}}">删除</button>
+      </view>
+    </view>
+  </view>
+</view>

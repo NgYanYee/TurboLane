@@ -1,0 +1,70 @@
+/* we7/pages/oders/orders.wxss */
+.container {
+  padding: 20rpx;
+}
+.header {
+  display: flex;
+  height: 60rpx;
+  border-bottom: 1rpx #ccc solid;
+}
+.header view {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 32rpx;
+}
+.selected {
+  color: #108ee9;
+  box-shadow: 0 5px 10px -6px #108ee9;
+}
+.content {
+  padding: 20rpx;
+}
+.item-content .publish-name {
+  color: #108ee9;
+  font-size: 28rpx;
+}
+.other-imfor,
+.item-content .publish-name {
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}
+.content-type {
+  font-size: 26rpx;
+  color: #3591e0;
+}
+.other-imfor {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+}
+.item-content {
+  border-bottom: 1rpx solid #ccc;
+  position: relative;
+}
+.other-botton {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 20rpx;
+}
+.other-botton button {
+  width: 180rpx;
+  height: 60rpx;
+  /* margin: 0; */
+  font-size: 24rpx;
+  color: #fff;
+}
+.finish {
+  background: #1AAD19;
+  margin-right: 20rpx;
+}
+.cancel {
+  background: #fd1919;
+  margin-right: 0;
+  margin-left: 0;
+}
+.isCanceled {
+  background-color: #f92f2c;
+}
+.isChecked {
+    background-color: #039608;
+}
