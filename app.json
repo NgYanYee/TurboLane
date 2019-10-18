@@ -1,10 +1,13 @@
 {
   "pages": [
-    "we7/pages/personal/personal",
-    "xyxz_xcx/pages/index/index",
+    "we7/pages/publish/publish",
+    "we7/pages/oders/orders",
     "we7/pages/index/detail/detail",
     "we7/pages/index/index",
-    "we7/pages/oders/orders"
+    
+    
+    "we7/pages/personal/personal"
+    
     
   ],
   "window": {

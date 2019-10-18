@@ -1,0 +1,30 @@
+<!--we7/pages/publish/publish.wxml-->
+<view class="container">
+  <view class="item-photo">
+
+  </view>
+  <view class="item-info">
+    <view class="title">
+      <input maxlength="30" placeholder="在此填写宝贝名称，如“松下电器" />
+    </view>
+    <view class="details">
+      <textarea maxlength="300" auto-height placeholder="在此描述你的宝贝：如品牌、规格、成色、购买渠道、转手原因等" />
+    </view>
+    <view class="address">
+      <text>大学城校区-东十二</text>
+    </view>
+  </view>
+  <view class="item-category">
+  
+  </view>
+  <view class="item-price">
+    <label>
+      <text>价格</text>
+      <input maxlength="4" class="inner-price" type="number" placeholder="100" placeholder-class="placeholderStyle"/>
+      <text>元</text>
+    </label>
+  </view>
+  <button class="pub-button">发布</button>
+
+</view>
+

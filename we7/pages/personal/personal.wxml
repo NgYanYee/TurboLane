@@ -25,4 +25,6 @@
     </view>
   </view>
 </view>
-<include src="/we7/pages/footer/footer.wxml"/>
+
+<import src="/we7/pages/templates/footer.wxml"/>
+<template is="footerWx" data="{{...tabBar}}"/>

@@ -18,14 +18,14 @@ App({
     },
     "tabBar": {
         "color": "#999",
-        "selectedColor": "#f86b4f",
+        "selectedColor": "#54a2e7",
         "borderStyle": "#fff",
         "backgroundColor": "#fff",
         "list": [
             {
-            "pagePath": "/we7/pages/store/index",
+            "pagePath": "/we7/pages/index/index",
                 "iconPath": "/we7/resource/icon/home.png",
-            "selectedIconPath": "/we7/resource/icon/home-selected.png",
+            "selectedIconPath": "/we7/resource/icon/homeselect.png",
                 "text": "首页"
             },
             // {
@@ -35,9 +35,15 @@ App({
             //     "text": "分类"
             // },
             {
-              "pagePath": "/we7/pages/home/index",
+              "pagePath": "/we7/pages/publish/publish",
+              "iconPath": "/we7/resource/icon/push.png",
+              "selectedIconPath": "/we7/resource/icon/push.png",
+              "text": "发布"
+            },
+            {
+              "pagePath": "/we7/pages/personal/personal",
               "iconPath": "/we7/resource/icon/user.png",
-              "selectedIconPath": "/we7/resource/icon/user-selected.png",
+              "selectedIconPath": "/we7/resource/icon/userselect.png",
                 "text": "我的"
             }
         ]
