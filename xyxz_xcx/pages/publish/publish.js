@@ -22,9 +22,7 @@ Page({
       name: "",
       list: []
     },
-    photos: [
-      
-    ],
+    imageSrc: "",
     goodsInfo: {
       title: "",
       details: ""
@@ -36,11 +34,35 @@ Page({
   },
 
   /**
-   * 生命周期函数--监听页面加载
-   */
+ * 生命周期函数--监听页面加载
+ */
   onLoad: function (options) {
 
   },
+
+  radiochange: function (e) {
+    console.log('radio发生change事件，携带的value值为：', e.detail.value)
+    // this.setData({
+    //   multiIndex: e.detail.value
+    // })
+
+  },
+  chooseImage(e) {
+    wx.chooseImage({
+      sizeType: ['original', 'compressed'],  //可选择原图或压缩后的图片
+      sourceType: ['album', 'camera'], //可选择性开放访问相册、相机
+      success: res => {
+        // tempFilePath可以作为img标签的src属性显示图片
+        const tempFilePaths = res.tempFilePaths
+        // 限制最多只能留下3张照片
+        this.setData({
+          imageSrc: tempFilePaths[0]
+        })
+
+      }
+    })
+  },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成

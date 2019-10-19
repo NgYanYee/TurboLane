@@ -35,13 +35,13 @@ App({
             //     "text": "分类"
             // },
             {
-              "pagePath": "/we7/pages/publish/publish",
+              "pagePath": "/xyxz_xcx/pages/publish/publish",
               "iconPath": "/we7/resource/icon/push.png",
               "selectedIconPath": "/we7/resource/icon/push.png",
               "text": "发布"
             },
             {
-              "pagePath": "/we7/pages/personal/personal",
+              "pagePath": "/xyxz_xcx/pages/personal/personal",
               "iconPath": "/we7/resource/icon/user.png",
               "selectedIconPath": "/we7/resource/icon/userselect.png",
                 "text": "我的"

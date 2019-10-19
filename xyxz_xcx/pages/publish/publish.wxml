@@ -1,7 +1,16 @@
 <!--we7/pages/publish/publish.wxml-->
 <view class="container">
   <view class="item-photo">
-
+    <button
+    type="default" size="mini" class="add-photo" bindtap="chooseImage" 
+    wx:if="{{!imageSrc}}"
+>添加图片</button>
+    <view class="image-wrap">
+      <!-- 图片缩略图 -->
+      <image class="image-mini"   src="{{imageSrc}}" mode="aspectFill" bindtap="handleImagePreview"></image>
+      <!-- 移除图片的按钮  -->
+      <view class="image-remover" bindtap="removeImage">删除</view>
+    </view>
   </view>
   <view class="item-info">
     <view class="title">
@@ -15,8 +24,8 @@
     </view>
   </view>
   <view class="item-category">
-    <radio-group class="radio-group">
-      <radio class="radio" wx:for="{{category}}" wx:key="name">
+    <radio-group class="radio-group" bindchange="radiochange">
+      <radio class="radio" wx:for="{{category}}" wx:key="name" value="{{item.name}}">
         <text>{{item.name}}</text>
       </radio> 
     </radio-group>

@@ -9,6 +9,13 @@
   margin-bottom: 20rpx;
 }
 
+.image-mini {
+  display: flex;
+  align-items: center;
+  width: 150rpx;
+  height: 150rpx;
+}
+
 .item-info {
   height: 500rpx;
   background-color: #fff;
