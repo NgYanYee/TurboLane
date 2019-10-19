@@ -15,7 +15,11 @@
     </view>
   </view>
   <view class="item-category">
-  
+    <radio-group class="radio-group">
+      <radio class="radio" wx:for="{{category}}" wx:key="name">
+        <text>{{item.name}}</text>
+      </radio> 
+    </radio-group>
   </view>
   <view class="item-price">
     <label>

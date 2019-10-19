@@ -1,11 +1,38 @@
 // we7/pages/publish/publish.js
+var app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    category: [
+      {
+        name: "书籍",
+        list: ['环境学院', '计算机学院', '物理学院']
 
+      },
+      {
+        name: "其他物品",
+        list: ['电子产品', '美妆/护肤', '服装', '饰品', '零食']
+      }
+    ],
+    
+    sorted: {
+      name: "",
+      list: []
+    },
+    photos: [
+      
+    ],
+    goodsInfo: {
+      title: "",
+      details: ""
+    },
+    location: "",
+    price: 1
+
+    
   },
 
   /**
