@@ -1,7 +1,8 @@
 {
   "pages": [
-    "xyxz_xcx/pages/personal/personal",
     "xyxz_xcx/pages/publish/publish",
+    "xyxz_xcx/pages/personal/personal",
+
     "we7/pages/oders/orders",
     "we7/pages/index/detail/detail",
     "we7/pages/index/index"

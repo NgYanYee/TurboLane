@@ -4,16 +4,47 @@
 }
 
 .item-photo {
-  height: 220rpx;
+  min-height: 180rpx;
   background-color: #fff;
   margin-bottom: 20rpx;
+  text-align: center;
+}
+
+.add-photo {
+  margin-top: 60rpx;
+}
+
+.image-container {
+  overflow: hidden;
+  width: 160rpx;
+  height: 160rpx;
+  text-align:center;
+  margin-top: 15rpx;
+  margin-left: 15rpx;
 }
 
 .image-mini {
-  display: flex;
-  align-items: center;
-  width: 150rpx;
-  height: 150rpx;
+  max-width: 280rpx;
+  height: 220rpx;
+}
+
+.image-remover {
+  position: relative;
+  top: -167rpx;
+  left: 156rpx;
+
+  width: 30rpx;
+  height: 30rpx;
+  background-color: red;
+  border-radius: 50%;
+  font-size: 13px;
+  text-align: center;
+}
+
+.image-remover text {
+  position: relative;
+  top: -3rpx;
+  color: #fff;
 }
 
 .item-info {

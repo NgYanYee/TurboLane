@@ -63,6 +63,22 @@ Page({
     })
   },
 
+  removeImage() {
+    this.setData({
+      imageSrc: ""
+    })
+  },
+
+  handleImagePreview(e) {
+    const imageSrc = this.data.imageSrc
+    wx.previewImage({
+      current: imageSrc,  //当前预览的图片
+      urls: [imageSrc],  //所有要预览的图片
+    })
+  },
+
+  
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成

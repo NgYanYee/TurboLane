@@ -5,11 +5,15 @@
     type="default" size="mini" class="add-photo" bindtap="chooseImage" 
     wx:if="{{!imageSrc}}"
 >添加图片</button>
-    <view class="image-wrap">
+    <view class="image-wrap" wx:if="{{imageSrc}}">
       <!-- 图片缩略图 -->
-      <image class="image-mini"   src="{{imageSrc}}" mode="aspectFill" bindtap="handleImagePreview"></image>
+      <view class="image-container">
+        <image class="image-mini"   src="{{imageSrc}}" mode="aspectFill" bindtap="handleImagePreview"></image>
+      </view>
       <!-- 移除图片的按钮  -->
-      <view class="image-remover" bindtap="removeImage">删除</view>
+      <view class="image-remover" bindtap="removeImage">
+        <text>×</text>
+      </view>
     </view>
   </view>
   <view class="item-info">
