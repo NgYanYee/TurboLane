@@ -23,16 +23,13 @@
     <view class="details">
       <textarea maxlength="300" auto-height placeholder="在此描述你的宝贝：如品牌、规格、成色、购买渠道、转手原因等" />
     </view>
-    <view class="address">
-      <text>大学城校区-东十二</text>
-    </view>
   </view>
   <view class="item-category">
-    <radio-group class="radio-group" bindchange="radiochange">
-      <radio class="radio" wx:for="{{category}}" wx:key="name" value="{{item.name}}">
-        <text>{{item.name}}</text>
-      </radio> 
-    </radio-group>
+    <picker bindchange="bindPickerChange" value="{{category[index]}}" range="{{category}}">
+      <view class="picker">
+        选择分类：{{category[index]}}
+      </view>
+    </picker>
   </view>
   <view class="item-price">
     <label>

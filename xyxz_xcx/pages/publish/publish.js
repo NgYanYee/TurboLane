@@ -6,17 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    category: [
-      {
-        name: "书籍",
-        list: ['环境学院', '计算机学院', '物理学院']
-
-      },
-      {
-        name: "其他物品",
-        list: ['电子产品', '美妆/护肤', '服装', '饰品', '零食']
-      }
-    ],
+    category: ["书籍", "数码电子", "生活用品", "美妆个护", "零食", "服饰"],
     
     sorted: {
       name: "",
@@ -28,7 +18,9 @@ Page({
       details: ""
     },
     location: "",
-    price: 1
+    price: 1,
+    index: 0,
+    "type": ""
 
     
   },
@@ -77,7 +69,12 @@ Page({
     })
   },
 
-  
+  bindPickerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index: e.detail.value
+    })
+  },
 
 
   /**
