@@ -1,0 +1,11 @@
+<!--xyxz_xcx/pages/personal/userinfo/userinfo.wxml-->
+<view class="container">
+  <view class="content">
+    <text>地址</text>
+    <textarea></textarea>
+    <text>微信号</text>
+    <input type="text"></input>
+    <text>联系电话</text>
+    <input type="number"></input>
+  </view>
+</view>

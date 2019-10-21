@@ -1,0 +1,11 @@
+<!--xyxz_xcx/login/login.wxml-->
+<view class="container">
+  <view class="title">师兄转让</view>
+  <view class="inputs">
+    <text>学号</text>
+    <input maxlength="10" type="number" class="student-id"></input>
+    <text>姓名</text>
+    <input maxlength="10" type="text" class="student-name"></input>
+  </view>
+  <button class="submit" >认证</button>
+</view>
