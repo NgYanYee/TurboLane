@@ -7,24 +7,24 @@ Page({
    */
   data: {
     orders: {
-      goodsName: 'dfsfs1000xm2',
-      publishTimes: '2019-08-22 06:22:ss',
-      times: '221',
-      images: [{
-        url: '../1.png'
-      }, {
-          url: '../1.png'
-      }],
-      descrip: '19年大大所大所大所大所大所大所大大所大所大大所大所大所大大所付所付·',
-      'type': '电子产品',
-      price: 111,
-      publisher: '吕同学',
-      wechat: 13533260067,
-      phone: '13533260067',
-      liuyan: [{
-        name: '111',
-        content: 'asdassssssssssssssssssssssssssssssssssssssssssssssssss'
-      }]
+      // goodsName: 'dfsfs1000xm2',
+      // publishTimes: '2019-08-22 06:22:ss',
+      // times: '221',
+      // images: [{
+      //   url: '../1.png'
+      // }, {
+      //     url: '../1.png'
+      // }],
+      // descrip: '19年大大所大所大所大所大所大所大大所大所大大所大所大所大大所付所付·',
+      // 'type': '电子产品',
+      // price: 111,
+      // publisher: '吕同学',
+      // wechat: 13533260067,
+      // phone: '13533260067',
+      // liuyan: [{
+      //   name: '111',
+      //   content: 'asdassssssssssssssssssssssssssssssssssssssssssssssssss'
+      // }]
     }
   },
 
@@ -32,6 +32,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     this.getData(options.id);
   },
 
@@ -86,14 +87,14 @@ Page({
   getData: function(id) {
     var $this = this;
     app.util.request({
-      url: 'entry/wxapp/detail',
+      url: 'entry/wxapp/GetOrderDetail',
       data: {
         id: id
       },
       method: 'post',
       success: function (response) {
         $this.setData({
-          'orders': response.data.data
+          'orders': response.data.data.orders
         });
       }
     });

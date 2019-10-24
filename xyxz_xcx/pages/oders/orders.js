@@ -35,8 +35,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(';1')
-    this.getData(this.data.currentView)
+    this.getData(1)
   },
 
   /**
@@ -96,10 +95,35 @@ Page({
       },
       method: 'post',
       success: function (response) {
-        console.log(response.data.data)
-        // $this.setData({
-        //   'orders': response.data.data.orders
-        // });
+        $this.setData({
+          'orders': response.data.data.orders
+        });
+      }
+    });
+  },
+  finishTap: function (e) {
+    var $this = this;
+    app.util.request({
+      url: 'entry/wxapp/CheckOrders',
+      data: {
+        'id': e.currentTarget.dataset.id
+      },
+      method: 'post',
+      success: function (response) {
+        $this.getData($this.data.currentView)
+      }
+    });
+  },
+  cancelTap: function (e) {
+    var $this = this;
+    app.util.request({
+      url: 'entry/wxapp/DelOrders',
+      data: {
+        'id': e.currentTarget.dataset.id
+      },
+      method: 'post',
+      success: function (response) {
+        $this.getData($this.data.currentView)
       }
     });
   }

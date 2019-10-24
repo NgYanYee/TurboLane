@@ -27,49 +27,51 @@ Page({
 		var that = this
 		app.util.footer(that);
 		//初始化导航数据
-		app.util.request({
-			'url': 'wxapp/home/nav',
-			'cachetime': '30',
-			success: function (res) {
-				if (!res.data.message.errno) {
-					console.log(res.data.message.message)
-					that.setData({
-						navs: res.data.message.message,
-					})
-				}
-			}
-		});
-		app.util.request({
-			'url': 'wxapp/home/slide',
-			'cachetime': '30',
-			success: function (res) {
-				if (!res.data.message.errno) {
-					that.setData({
-						slide: res.data.message.message,
-					})
-				}
-			}
-		});
-		app.util.request({
-			url: 'wxapp/home/commend',
-			cachetime: '30',
-			success: function (res) {
-				if (!res.data.message.errno) {
-					that.setData({
-						commend: res.data.message.message,
-					})
-				}
-			}
-		});
+		// app.util.request({
+		// 	'url': 'wxapp/home/nav',
+		// 	'cachetime': '30',
+		// 	success: function (res) {
+		// 		if (!res.data.message.errno) {
+		// 			console.log(res.data.message.message)
+		// 			that.setData({
+		// 				navs: res.data.message.message,
+		// 			})
+		// 		}
+		// 	}
+		// });
+		// app.util.request({
+		// 	'url': 'wxapp/home/slide',
+		// 	'cachetime': '30',
+		// 	success: function (res) {
+		// 		if (!res.data.message.errno) {
+		// 			that.setData({
+		// 				slide: res.data.message.message,
+		// 			})
+		// 		}
+		// 	}
+		// });
+		// app.util.request({
+		// 	url: 'wxapp/home/commend',
+		// 	cachetime: '30',
+		// 	success: function (res) {
+		// 		if (!res.data.message.errno) {
+		// 			that.setData({
+		// 				commend: res.data.message.message,
+		// 			})
+		// 		}
+		// 	}
+		// });
+    this.getData('全部')
 	},
   bindMultiPickerChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
+    // console.log('picker发送选择改变，携带值为', this.data.multiArray[1][e.detail.value[1]])
     this.setData({
       multiIndex: e.detail.value
     })
+    this.getData(this.data.multiArray[1][e.detail.value[1]])
   },
   bindMultiPickerColumnChange: function (e) {
-    console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
+    // console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
     var data = {
       multiArray: this.data.multiArray,
       multiIndex: this.data.multiIndex
@@ -97,4 +99,19 @@ Page({
     }
     this.setData(data);
   },
+  getData: function (id) {
+    var $this = this;
+    app.util.request({
+      url: 'entry/wxapp/detail',
+      data: {
+        'type': id
+      },
+      method: 'post',
+      success: function (response) {
+        $this.setData({
+          'orders': response.data.data
+        });
+      }
+    });
+  }
 });
