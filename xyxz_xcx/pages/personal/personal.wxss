@@ -74,6 +74,6 @@
   right: 20rpx;
 }
 
-.my-messages, .my-info {
+.my-messages, .my-info, .my-orders{
   line-height: 100rpx;
 }

@@ -81,6 +81,25 @@ Page({
         // this.setData({
         //   comments: res.data.liuyan
         // })
+        if(res.data.status == 1) {
+          this.setData({
+            submitState: false
+          })
+        } else if(res.data.status == 2) {
+          this.setData({
+            studentId: res.data.studentId,
+            name: that.data.studentName,
+            college: res.data.college,
+            address: res.data.address,
+            phone: res.data.phone,
+            wechat: res.data.wechat,
+            submitState: true
+          })
+        } else {
+          this.setData({
+            submitState: true
+          })
+        }
       }
     });
   },

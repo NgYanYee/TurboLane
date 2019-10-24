@@ -50,7 +50,12 @@ Page({
       'url': 'entry/wxapp/AuthUser',
       'cachetime': '30',
       success: function (res) {
-        
+        console.log(res)
+        if(res.data.status == 0) {
+          wx.navigateTo({
+            url: '../personal/userinfo/userinfo',
+          })
+        }
         // if (!res.data.message.errno) {
         //   console.log(res.data.message.message)
         //   that.setData({
