@@ -1,0 +1,20 @@
+/* xyxz_xcx/pages/personal/messages/messages.wxss */
+page {
+  background-color: #eee;
+}
+.container {
+  margin-top: 20rpx;
+  border-top: 1rpx solid #eee;
+  background-color: #fff;
+}
+
+.comment-item {
+  margin: 0 40rpx;
+  border-bottom: 1rpx solid #eee;
+  padding: 20rpx 0;
+}
+
+.comment-content {
+  color: #888;
+  font-size: 13px;
+}

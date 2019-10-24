@@ -30,7 +30,7 @@
 
 .image-remover {
   position: relative;
-  top: -167rpx;
+  top: -170rpx;
   left: 156rpx;
 
   width: 30rpx;
@@ -43,16 +43,16 @@
 
 .image-remover text {
   position: relative;
-  top: -3rpx;
+  top: -6rpx;
   color: #fff;
 }
 
 .item-info {
-  height: 500rpx;
+  height: 450rpx;
   background-color: #fff;
   margin-bottom: 20rpx;
   padding: 20rpx;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .item-info .title {
@@ -62,20 +62,21 @@
 
 .item-info .details {
   padding-top: 20rpx;
-  height: 350rpx;
+  height: 340rpx;
+}
+
+.item-info .details textarea {
+  min-height: 200rpx;
 }
 
 .item-category {
-  height: 300rpx;
+  height: 70rpx;
   background-color: #fff;
   margin-bottom: 20rpx;
   padding: 20rpx;
 }
 
-.item-category radio {
-  margin-right: 60rpx;
-  margin-left: 20rpx;
-}
+
 
 .item-price {
   /* display: flex; */
@@ -92,6 +93,9 @@
   width: 78%;
   margin-right: 20rpx;
   text-align: right;
+  position: relative;
+  top: -3rpx;
+
 }
 
 .item-price .placeholderStyle {

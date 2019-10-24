@@ -1,0 +1,40 @@
+/* xyxz_xcx/pages/personal/userinfo/userinfo.wxss */
+page {
+  background-color: #eee;
+}
+.container {
+  margin-top: 20rpx;
+  
+  border-top: 1rpx solid #eee;
+}
+
+.edit-input {
+  background-color: #fff;
+}
+
+.edit-input {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-between;
+ border-bottom: 1rpx solid #eee;
+ padding: 20rpx;
+}
+
+.edit-input text {
+  font-size: 15px;
+}
+
+.edit-input input {
+  font-size: 13px;
+  width: 75%;
+}
+
+.save {
+  margin-top: 50rpx;
+  color: #fff;
+  background-color: #54a2e7;
+  font-size: 15px;
+  width: 50%;
+}
+
+
