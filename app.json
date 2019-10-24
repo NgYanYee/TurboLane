@@ -1,10 +1,14 @@
 {
   "pages": [
-      "xyxz_xcx/pages/personal/personal",
+    "xyxz_xcx/pages/personal/personal",
     "xyxz_xcx/pages/personal/userinfo/userinfo",
     "xyxz_xcx/pages/personal/messages/messages",
-    
     "xyxz_xcx/pages/publish/publish",
+    
+    
+    
+    
+    
     "we7/pages/oders/orders",
     "we7/pages/index/detail/detail",
     "we7/pages/index/index"

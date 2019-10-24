@@ -1,4 +1,6 @@
 // xyxz_xcx/pages/personal/messages/messages.js
+var app = getApp()
+
 Page({
 
   /**
@@ -8,19 +10,23 @@ Page({
     comments: [
       {
         name: "wuwuw",
-        content: "请问还在吗"
+        content: "请问还在吗",
+        id: ''
       },
       {
         name: "wuwuw",
-        content: "就大佛爱师姐佛山第几件事东风街"
+        content: "就大佛爱师姐佛山第几件事东风街",
+        id: ''
       },
       {
         name: "wuwuw",
-        content: "请问还在吗"
+        content: "请问还在吗",
+        id: ''
       },
       {
         name: "wuwuw",
-        content: "请问还在吗"
+        content: "请问还在吗",
+        id: ''
       }
     ]
   },
@@ -29,7 +35,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    app.util.request({
+      'url': 'entry/wxapp/GetComments',
+      'cachetime': '30',
+      success: function (res) {
+        console.log(res)
+        // this.setData({
+        //   comments: res.data.liuyan
+        // })
+      }
+    });
   },
 
   /**

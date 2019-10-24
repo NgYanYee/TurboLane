@@ -28,27 +28,18 @@ Page({
         enName: "snacks"
       },
       {
-        name: "书籍",
-        enName: "books"
-      },
-      {
         name: "服饰",
         enName: "costume"
       },
     ],
     
-    sorted: {
-      name: "",
-      list: []
-    },
+    sort: "books",
     imageSrc: "",
-    goodsInfo: {
-      title: "",
-      details: ""
-    },
-    location: "",
+    title: "",
+    descrip: "",
     price: 1,
-    index: 0
+    index: 0,
+    imgURL: ""
   },
 
   /**
@@ -59,6 +50,7 @@ Page({
       'url': 'entry/wxapp/AuthUser',
       'cachetime': '30',
       success: function (res) {
+        
         // if (!res.data.message.errno) {
         //   console.log(res.data.message.message)
         //   that.setData({
@@ -69,14 +61,9 @@ Page({
     });
   },
 
-  radiochange: function (e) {
-    console.log('radio发生change事件，携带的value值为：', e.detail.value)
-    // this.setData({
-    //   multiIndex: e.detail.value
-    // })
-
-  },
+  
   chooseImage(e) {
+    var that = this
     wx.chooseImage({
       sizeType: ['original', 'compressed'],  //可选择原图或压缩后的图片
       sourceType: ['album', 'camera'], //可选择性开放访问相册、相机
@@ -87,7 +74,34 @@ Page({
         this.setData({
           imageSrc: tempFilePaths[0]
         })
-
+        wx.uploadFile({
+          url: 'https://zx.sumrugh.xyz/addons/xyxz_xcx/upload.php', 
+          filePath: tempFilePaths[0],
+          name: 'file',
+          header: {
+            "content-type": "multipart/form-data"
+          },
+          success: function (res) {
+            console.log(res)
+            if(res.data.sts == "fail") {
+              wx.showToast({
+                title: '上传图片失败，请重新选择图片',
+                icon:'none'
+              })
+            }
+            else {
+              wx.showToast({
+                title: '上传图片成功',
+                icon: 'success'
+              })
+              that.setData({
+                imgURL: "https://zx.sumrugh.xyz/addons/xyxz_xcx/upload/" + res.data.url
+            
+              })
+            //do something
+            }
+          }
+        })
       }
     })
   },
@@ -107,10 +121,53 @@ Page({
   },
 
   bindPickerChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
+    var index = e.detail.value
+    var value = this.data.category[index].enName
     this.setData({
-      index: e.detail.value
+      index: e.detail.value,
+      sort: value
     })
+    
+  },
+
+  inputWatch: function(e) {
+    let item = e.currentTarget.dataset.model;
+    this.setData({
+      [item]: e.detail.value
+    })
+  },
+  publish: function() {
+    var that = this
+    app.util.request({
+      'url': 'entry/wxapp/PostGoods',
+      'cachetime': '30',
+      'data': {
+        title: that.data.title,  // 物品名字
+        descrip: that.data.descrip, // 描述
+        'type': that.data.sort,   // 物品类别
+        price: that.data.price,
+        image: that.data.imgURL
+      },
+      success: function (res) {
+        wx.showToast({
+          title: '发布成功',
+          icon: 'success',
+          complete: function (res) {
+            wx.redirectTo({
+              url: '/we7/pages/index/index'
+            })
+          },
+        })
+
+        console.log(res)
+        // if (!res.data.message.errno) {
+        //   console.log(res.data.message.message)
+        //   that.setData({
+        //     navs: res.data.message.message,
+        //   })
+        // }
+      }
+    });
   },
 
 

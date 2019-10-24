@@ -1,20 +1,31 @@
 <!--xyxz_xcx/pages/personal/userinfo/userinfo.wxml-->
 <view class="container">
   
-  <view class="edit-content">
+  <form bindsubmit="formSubmit" class="edit-content" report-submit='true'>
+    <view class="edit-input">
+      <text>姓名</text>
+      <input type="text" bindinput="watchInput" data-model="name"></input>
+    </view>
+    <view class="edit-input">
+      <text>学号</text>
+      <input type="number" bindinput="watchInput" data-model="studentId"></input>
+    </view>
     <view class="edit-input">
       <text>宿舍地址</text>
-      <input type="text"></input>
+      <input type="text" bindinput="watchInput" data-model="address"></input>
     </view>
-
+    <view class="edit-input">
+      <text>学院</text>
+      <input type="text" bindinput="watchInput" data-model="college"></input>
+    </view>
     <view class="edit-input">
       <text>微信号</text>
-      <input type="text"></input>
+      <input type="text" bindinput="watchInput" data-model="wechat"></input>
     </view>
     <view class="edit-input">
       <text>联系电话</text>
-      <input type="number"></input>
+      <input type="number" bindinput="watchInput" data-model="phone"></input>
     </view>
-    <button bindtap="saveinfo" class="save">保存</button>
-  </view>
+    <button class="save" form-type='submit'>保存</button>
+  </form>
 </view>

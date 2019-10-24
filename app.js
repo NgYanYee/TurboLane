@@ -1,6 +1,8 @@
 var util = require('we7/resource/js/util.js');
 App({
     onLaunch: function (res) {
+
+      
     },
     onShow: function (res) {
     },
