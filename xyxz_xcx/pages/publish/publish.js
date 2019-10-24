@@ -6,7 +6,36 @@ Page({
    * 页面的初始数据
    */
   data: {
-    category: ["书籍", "数码电子", "生活用品", "美妆个护", "零食", "服饰"],
+    category: [
+      {
+        name:"书籍",
+        enName: "books"
+      },
+      {
+        name: "数码电子",
+        enName: "digital"
+      },
+      {
+        name: "生活用品",
+        enName: "daily"
+      },
+      {
+        name: "美妆个护",
+        enName: "cosmetics"
+      },
+      {
+        name: "零食",
+        enName: "snacks"
+      },
+      {
+        name: "书籍",
+        enName: "books"
+      },
+      {
+        name: "服饰",
+        enName: "costume"
+      },
+    ],
     
     sorted: {
       name: "",
@@ -19,17 +48,25 @@ Page({
     },
     location: "",
     price: 1,
-    index: 0,
-    "type": ""
-
-    
+    index: 0
   },
 
   /**
  * 生命周期函数--监听页面加载
  */
   onLoad: function (options) {
-
+    app.util.request({
+      'url': 'entry/wxapp/AuthUser',
+      'cachetime': '30',
+      success: function (res) {
+        // if (!res.data.message.errno) {
+        //   console.log(res.data.message.message)
+        //   that.setData({
+        //     navs: res.data.message.message,
+        //   })
+        // }
+      }
+    });
   },
 
   radiochange: function (e) {

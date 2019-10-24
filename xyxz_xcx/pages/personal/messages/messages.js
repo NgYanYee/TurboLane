@@ -1,11 +1,28 @@
-// xyxz_xcx/login/login.js
+// xyxz_xcx/pages/personal/messages/messages.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    comments: [
+      {
+        name: "wuwuw",
+        content: "请问还在吗"
+      },
+      {
+        name: "wuwuw",
+        content: "就大佛爱师姐佛山第几件事东风街"
+      },
+      {
+        name: "wuwuw",
+        content: "请问还在吗"
+      },
+      {
+        name: "wuwuw",
+        content: "请问还在吗"
+      }
+    ]
   },
 
   /**

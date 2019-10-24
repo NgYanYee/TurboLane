@@ -25,9 +25,9 @@
     </view>
   </view>
   <view class="item-category">
-    <picker bindchange="bindPickerChange" value="{{category[index]}}" range="{{category}}">
+    <picker bindchange="bindPickerChange" value="{{category[index].enName}}" range="{{category}}">
       <view class="picker">
-        选择分类：{{category[index]}}
+        选择分类：{{category[index].name}}
       </view>
     </picker>
   </view>
