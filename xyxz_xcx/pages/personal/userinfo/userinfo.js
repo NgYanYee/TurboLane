@@ -73,8 +73,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this
     app.util.request({
-      'url': 'entry/wxapp/GetComments',
+      'url': 'entry/wxapp/GetUser',
       'cachetime': '30',
       success: function (res) {
         console.log(res)
@@ -86,7 +87,7 @@ Page({
             submitState: false
           })
         } else if(res.data.status == 2) {
-          this.setData({
+          that.setData({
             studentId: res.data.studentId,
             name: that.data.studentName,
             college: res.data.college,
@@ -96,7 +97,7 @@ Page({
             submitState: true
           })
         } else {
-          this.setData({
+          that.setData({
             submitState: true
           })
         }
