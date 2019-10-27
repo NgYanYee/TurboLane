@@ -53,8 +53,8 @@ Page({
       'url': 'entry/wxapp/AuthUser',
       'cachetime': '30',
       success: function (res) {
-        console.log(res)
-        if(res.data.status == 0) {
+        console.log(res.data);
+        if(res.data.data.status == 0) {
           wx.navigateTo({
             url: '../personal/userinfo/userinfo',
           })

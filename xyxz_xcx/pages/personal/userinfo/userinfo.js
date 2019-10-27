@@ -77,23 +77,22 @@ Page({
     app.util.request({
       'url': 'entry/wxapp/GetUser',
       'cachetime': '30',
-      success: function (res) {
-        console.log(res)
+      success: function ({data}) {
         // this.setData({
         //   comments: res.data.liuyan
         // })
-        if(res.data.status == 1) {
+        if(data.data.status == 1 ) {
           this.setData({
             submitState: false
           })
-        } else if(res.data.status == 2) {
+        } else if(data.data.status == 2) {
           that.setData({
-            studentId: res.data.studentId,
-            name: that.data.studentName,
-            college: res.data.college,
-            address: res.data.address,
-            phone: res.data.phone,
-            wechat: res.data.wechat,
+            studentId: data.data.studentId,
+            name: data.data.studentName,
+            college: data.data.college,
+            address: data.data.address,
+            phone: data.data.phone,
+            wechat: data.data.wechat,
             submitState: true
           })
         } else {

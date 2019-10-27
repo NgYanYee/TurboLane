@@ -4,27 +4,27 @@
   <form bindsubmit="formSubmit" class="edit-content" report-submit='true'>
     <view class="edit-input">
       <text>姓名</text>
-      <input type="text" bindinput="watchInput" data-model="name"></input>
+      <input type="text" bindinput="watchInput" data-model="name" value="{{name}}"></input>
     </view>
     <view class="edit-input">
       <text>学号</text>
-      <input type="number" bindinput="watchInput" data-model="studentId"></input>
+      <input type="number" bindinput="watchInput" data-model="studentId" value="{{studentId}}"></input>
     </view>
     <view class="edit-input">
       <text>宿舍地址</text>
-      <input type="text" bindinput="watchInput" data-model="address"></input>
+      <input type="text" bindinput="watchInput" data-model="address" value="{{address}}"></input>
     </view>
     <view class="edit-input">
       <text>学院</text>
-      <input type="text" bindinput="watchInput" data-model="college"></input>
+      <input type="text" bindinput="watchInput" data-model="college" value="{{college}}"></input>
     </view>
     <view class="edit-input">
       <text>微信号</text>
-      <input type="text" bindinput="watchInput" data-model="wechat"></input>
+      <input type="text" bindinput="watchInput" data-model="wechat" value="{{wechat}}"></input>
     </view>
     <view class="edit-input">
       <text>联系电话</text>
-      <input type="number" bindinput="watchInput" data-model="phone"></input>
+      <input type="number" bindinput="watchInput" data-model="phone" value="{{phone}}"></input>
     </view>
     <button class="{{submitState === true ? 'save' : 'check'}}"  disabled="{{!submitState}}"  form-type='submit'>保存</button>
   </form>
