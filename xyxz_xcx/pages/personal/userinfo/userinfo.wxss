@@ -37,4 +37,12 @@ page {
   width: 50%;
 }
 
+.check {
+  margin-top: 50rpx;
+  color: #999;
+  background-color: #ccc;
+  font-size: 15px;
+  width: 50%;
+}
+
 

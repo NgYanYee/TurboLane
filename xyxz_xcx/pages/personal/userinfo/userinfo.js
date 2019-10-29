@@ -73,14 +73,33 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this
     app.util.request({
-      'url': 'entry/wxapp/GetComments',
+      'url': 'entry/wxapp/GetUser',
       'cachetime': '30',
-      success: function (res) {
-        console.log(res)
+      success: function ({data}) {
         // this.setData({
         //   comments: res.data.liuyan
         // })
+        if(data.data.status == 1 ) {
+          this.setData({
+            submitState: false
+          })
+        } else if(data.data.status == 2) {
+          that.setData({
+            studentId: data.data.studentId,
+            name: data.data.studentName,
+            college: data.data.college,
+            address: data.data.address,
+            phone: data.data.phone,
+            wechat: data.data.wechat,
+            submitState: true
+          })
+        } else {
+          that.setData({
+            submitState: true
+          })
+        }
       }
     });
   },

@@ -9,12 +9,18 @@
     <view class="func-content">
       <view class="func-list">
         <image src="/we7/resource/icon/infos.png" class="my-icon"></image>
-        <view class="my-info">个人资料</view>
+        <navigator class="my-info" url="./userinfo/userinfo" >个人资料</navigator>
+        <!-- <view class="my-info">个人资料</view> -->
+        <text class="next">></text>
+      </view>
+      <view class="func-list">
+        <image src="/we7/resource/icon/orders.png" class="my-icon"></image>
+        <navigator class="my-orders" url="../oders/orders" >我的订单</navigator>
         <text class="next">></text>
       </view>
       <view class="func-list">
         <image src="/we7/resource/icon/ling.png" class="my-icon"></image>
-        <view class="my-messages">我的消息</view>
+        <navigator class="my-info" url="./messages/messages" >我的消息</navigator>
         <text class="next">></text>
       </view>
       <view class="func-list">

@@ -46,17 +46,19 @@ Page({
  * 生命周期函数--监听页面加载
  */
   onLoad: function (options) {
+    var that = this
+    app.util.footer(that)
+
     app.util.request({
       'url': 'entry/wxapp/AuthUser',
       'cachetime': '30',
       success: function (res) {
-        
-        // if (!res.data.message.errno) {
-        //   console.log(res.data.message.message)
-        //   that.setData({
-        //     navs: res.data.message.message,
-        //   })
-        // }
+        console.log(res.data);
+        if(res.data.data.status == 0) {
+          wx.navigateTo({
+            url: '../personal/userinfo/userinfo',
+          })
+        }
       }
     });
   },
@@ -137,6 +139,27 @@ Page({
     })
   },
   publish: function() {
+    if(this.data.imgURL == '') {
+      wx.showToast({
+        title: '请添加图片!',
+        icon: 'none'
+      })
+      return;
+    }
+    if (this.data.title == '') {
+      wx.showToast({
+        title: '请添加标题!',
+        icon: 'none'
+      })
+      return;
+    }
+    if (this.data.descrip == '') {
+      wx.showToast({
+        title: '请添加描述!',
+        icon: 'none'
+      })
+      return;
+    }
     var that = this
     app.util.request({
       'url': 'entry/wxapp/PostGoods',
@@ -160,12 +183,6 @@ Page({
         })
 
         console.log(res)
-        // if (!res.data.message.errno) {
-        //   console.log(res.data.message.message)
-        //   that.setData({
-        //     navs: res.data.message.message,
-        //   })
-        // }
       }
     });
   },
