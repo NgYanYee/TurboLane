@@ -63,7 +63,7 @@ Page({
         // this.setData({
         //   comments: res.data.liuyan
         // })
-        if(res.data.sts == "success") {
+        if(res.data.data.sts == "success") {
           wx.showToast({
             title: '提交成功'
           })

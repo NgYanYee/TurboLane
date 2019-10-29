@@ -40,9 +40,9 @@ Page({
       'cachetime': '30',
       success: function (res) {
         console.log(res)
-        // this.setData({
-        //   comments: res.data.liuyan
-        // })
+        this.setData({
+          comments: res.data.data.liuyan
+        })
       }
     });
   },
