@@ -69,7 +69,3 @@
   display: flex;
   justify-content: space-between;
 }
-.no-goods {
-  text-align: center;
-  padding: 20rpx;
-}

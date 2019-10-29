@@ -97,7 +97,7 @@ Page({
                 icon: 'success'
               })
               that.setData({
-                imgURL: "https://zx.sumrugh.xyz/addons/xyxz_xcx/upload/" + res.data.url
+                imgURL: res.data.url
             
               })
             //do something

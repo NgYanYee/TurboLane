@@ -7,7 +7,7 @@
     "xyxz_xcx/pages/oders/orders",
     "xyxz_xcx/pages/publish/publish",
     "xyxz_xcx/pages/personal/userinfo/userinfo",
-    "xyxz_xcx/pages/personal/messages/messages",
+    "xyxz_xcx/pages/personal/messages/messages"
   ],
   "window": {
     "navigationBarTextStyle": "white",

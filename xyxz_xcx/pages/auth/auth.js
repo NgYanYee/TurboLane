@@ -14,6 +14,7 @@ Page({
           avatar: result.detail.userInfo.avatarUrl,
           nickname: result.detail.userInfo.nickName,
         }
+        console.log(userdata)
         app.util.request({
           'url': 'entry/wxapp/addUser',
           'cachetime': '30',
