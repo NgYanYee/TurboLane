@@ -6,6 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    id: '',
+    userN: '',
+    isShow:false,
     orders: {
       // goodsName: 'dfsfs1000xm2',
       // publishTimes: '2019-08-22 06:22:ss',
@@ -32,8 +35,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+    // console.log(options)
     this.getData(options.id);
+    this.setData({
+      id: options.id|| 1
+    })
   },
 
   /**
@@ -93,9 +99,36 @@ Page({
       },
       method: 'post',
       success: function (response) {
+        response.data.data.orders.image = 'https://zx.sumrugh.xyz/addons/xyxz_xcx/upload/' + response.data.data.orders.image
         $this.setData({
           'orders': response.data.data.orders
         });
+      }
+    });
+  },
+  finishTap: function (e) {
+    this.setData({
+      isShow: true
+    })
+  },
+  userNameInput: function (e) {
+    this.setData({
+      userN: e.detail.value
+    })
+  },
+  postTap: function (e) {
+    var $this = this;
+    app.util.request({
+      url: 'entry/wxapp/PostComment',
+      data: {
+        id: $this.data.id,
+        content: $this.data.userN
+      },
+      method: 'post',
+      success: function (response) {
+        $this.setData({
+          isShow: false
+        })
       }
     });
   }

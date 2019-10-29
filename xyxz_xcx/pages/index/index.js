@@ -109,8 +109,12 @@ Page({
       },
       method: 'post',
       success: function (response) {
+        let data = response.data.data.orders || [];
+        for (let i of data) {
+          i.image = 'https://zx.sumrugh.xyz/addons/xyxz_xcx/upload/' + i.image;
+        }
         $this.setData({
-          'orders': response.data.data.orders
+          'orders': data
         });
       }
     });

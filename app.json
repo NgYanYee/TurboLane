@@ -1,10 +1,10 @@
 {
   "pages": [
     "xyxz_xcx/pages/index/index",
+    "xyxz_xcx/pages/index/detail/detail",
     "xyxz_xcx/pages/oders/orders",
     "xyxz_xcx/pages/publish/publish",
-    "xyxz_xcx/pages/personal/personal",
-    "xyxz_xcx/pages/index/detail/detail"
+    "xyxz_xcx/pages/personal/personal"
   ],
   "window": {
     "navigationBarTextStyle": "white",
