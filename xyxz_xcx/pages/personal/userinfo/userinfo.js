@@ -32,6 +32,17 @@ Page({
       })
     }
     var that = this
+
+    if (that.data.name == '' || that.data.studentId == '' || that.data.address == '' || that.data.wechat == '' || that.data.phone == '' || that.data.college == '') {
+      wx.showToast({
+        title: '请填写完整的个人信息',
+        icon: 'none',
+        complete: function (res) {
+
+        },
+      })
+      return;
+    }
     var formId = e.detail.formId
     console.log(e.detail.formId)
     
