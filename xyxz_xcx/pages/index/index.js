@@ -83,8 +83,9 @@ Page({
       },
       method: 'post',
       success: function (response) {
+        console.log(response.data)
         $this.setData({
-          'orders': response.data.data.orders
+          'orders': response.data.data.orders | []
         });
       }
     });
