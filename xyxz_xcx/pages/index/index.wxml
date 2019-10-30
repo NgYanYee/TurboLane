@@ -6,7 +6,7 @@
   <view>
     <picker class='picker-content' mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
       <view class="picker">
-        {{multiArray[0][multiIndex[0]]}} -> {{multiArray[1][multiIndex[1]]}}
+        类别：{{multiArray[0][multiIndex[0]]}}
       </view>
     </picker>
   </view>
