@@ -12,8 +12,7 @@
     <view class='content-item'>
       <view class='image-detail'>图片详情</view>
       <view class='image-container'>
-        <image src='{{orders.image}}'></image>
-        <!-- <image wx:for="{{orders.images}}" src='{{item.url}}' wx:key="unique"></image> -->
+        <image wx:for="{{orders.images}}" src='{{item.url}}' wx:key="unique"></image>
         <!-- <image src='../1.png'></image>
         <image src='../1.png'></image>
         <image src='../1.png'></image> -->
@@ -48,7 +47,6 @@
   </view>
   <view class='content'>
     <view class='image-detail'>全部留言（{{orders.liuyan.length}}）</view>
-    <button class='finish' bindtap="finishTap" hover-class='isChecked' data-id="{{item.id}}">发表留言</button>
     <view class='no-liuyan' wx:if="{{ orders.liuyan.length <= 0 }}">暂时没有留言</view>
     <view class='liuyan-contain' wx:for="{{orders.liuyan}}" wx:key="liuyan">
       <view class='liu-yan-zhe'>
@@ -58,16 +56,5 @@
         {{item.content}}
       </view>
     </view>
-  </view>
-  <view class='content post-message' wx:if="{{isShow}}">
-    <view class='content-information'>
-      <view class='item-name'>内容</view>
-      <input class="input" name="userName" placeholder="请输入内容" 
-    bindinput="userNameInput"></input>
-    </view>
-    <view class='content-information'>
-      <button class='post' bindtap="postTap" hover-class='isChecked'>确定</button>
-    </view>
-    
   </view>
 </view>

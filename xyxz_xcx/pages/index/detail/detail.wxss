@@ -1,7 +1,6 @@
 /* we7/pages/index/detail/detail.wxss */
 .container {
   background: #ccc;
-  position: relative
 }
 .header {
   padding: 30rpx;
@@ -21,7 +20,6 @@
   margin-top: 10rpx;
   background: #fff;
   padding: 30rpx;
-  position: relative;
 }
 .content-item image {
   width: 200rpx;
@@ -67,49 +65,4 @@
 .liu-yan-content {
   font-size: 28rpx;
   word-break:break-all;
-}
-.finish {
-  width: 180rpx;
-  height: 60rpx;
-  /* margin: 0; */
-  font-size: 24rpx;
-  color: #fff;
-  background: #1AAD19;
-  margin-right: 20rpx;
-  position: absolute;
-  top: 20rpx;
-  right: 18rpx;
-}
-.isChecked {
-    background-color: #039608;
-}
-.post-message {
-  position:absolute;
-  top:0;
-  height:100%;
-  width:100%;
-  background:rgba(0,0,0,.4);
-  margin-top:10rpx;
-  /* background:#fff; */
-  padding: 0;
-
-}
-.post-message .content-information {
-  background: #fff;
-  padding: 10rpx;
-}
-.post-message .input {
-  font-size:30rpx;
-}
-.post {
-  width: 180rpx;
-  height: 60rpx;
-  /* margin: 0; */
-  font-size: 24rpx;
-  color: #fff;
-  background: #1AAD19;
-  margin-right: 20rpx;
-  /* position: absolute; */
-  /* top: 20rpx; */
-  /* right: 18rpx; */
 }

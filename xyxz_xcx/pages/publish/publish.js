@@ -85,7 +85,7 @@ Page({
           },
           success: function (res) {
             console.log(res)
-            if(res.data.sts == "fail") {
+            if(res.data.data.sts == "fail") {
               wx.showToast({
                 title: '上传图片失败，请重新选择图片',
                 icon:'none'
@@ -97,7 +97,7 @@ Page({
                 icon: 'success'
               })
               that.setData({
-                imgURL: "https://zx.sumrugh.xyz/addons/xyxz_xcx/upload/" + res.data.url
+                imgURL: res.data.url
             
               })
             //do something
@@ -172,15 +172,17 @@ Page({
         image: that.data.imgURL
       },
       success: function (res) {
-        wx.showToast({
-          title: '发布成功',
-          icon: 'success',
-          complete: function (res) {
-            wx.redirectTo({
-              url: '/we7/pages/index/index'
-            })
-          },
-        })
+        if (res.data.data.sts == "success") {
+          wx.showToast({
+            title: '发布成功',
+            icon: 'success',
+            complete: function (res) {
+              wx.redirectTo({
+                url: '/we7/pages/index/index'
+              })
+            },
+          })
+        }
 
         console.log(res)
       }

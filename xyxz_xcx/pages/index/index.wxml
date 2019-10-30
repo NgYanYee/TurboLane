@@ -35,8 +35,7 @@
         <view class='name'>{{item.publisher}}</view>
         <view class='goods-name'>{{item.title}}</view>
         <view class='goods-images'>
-          <!-- <image wx:for="{{ item.images }}" wx:for-item="photos" src='{{photos.url}}' wx:key="good"></image> -->
-          <image src='{{item.image}}'></image>
+          <image wx:for="{{ item.images }}" wx:for-item="photos" src='{{photos.url}}' wx:key="good"></image>
         </view>
         <view class='goods-type'>{{item.type}}</view>
         <view class='other-imfomation'>
@@ -46,7 +45,6 @@
         <view class='item-line'></view>
       </view>
     </view>
-    <view class='no-goods' wx:if="{{orders.length <= 0}}">暂无物品</view>
   </scroll-view>
 </view>
 <import src="/we7/pages/templates/footer.wxml"/>
