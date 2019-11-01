@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
   <view class='search-content'>
-    <input class="search-input" placeholder="请输入查询内容"/>
+    <input class="search-input" bindinput="searchThings" placeholder="请输入查询内容"/>
   </view>
   <view>
     <picker class='picker-content' mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
@@ -29,14 +29,12 @@
     </view> -->
     <view class='item-contaner' wx:for="{{ orders }}" wx:key="unique" bindtap='navicat' data-id="{{item.id}}">
       <view class='image-header'>
-        <image src='{{item.image}}'></image> 
+        <image src='{{item.avatar}}'></image> 
       </view>
       <view class='iformation'>
         <view class='name'>{{item.publisher}}</view>
         <view class='goods-name'>{{item.title}}</view>
         <view class='goods-images'>
-          <image wx:for="{{ item.images }}" wx:for-item="photos" src='{{photos.url}}' wx:key="good"></image>
-
           <image src='{{item.image}}' wx:key="good"></image>
         </view>
         <view class='goods-type'>{{item.type}}</view>

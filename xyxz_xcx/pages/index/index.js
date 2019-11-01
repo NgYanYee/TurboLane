@@ -79,9 +79,13 @@ Page({
       },
       method: 'post',
       success: function (response) {
-        console.log(response.data)
+        console.log(response.data.data.orders)
+        let orders = response.data.data.orders
+        for(let obj of orders) {
+          obj.image = 'https://zx.sumrugh.xyz/addons/xyxz_xcx/upload/' + obj.image
+        }
         $this.setData({
-          'orders': response.data.data || []
+          'orders': orders || []
         });
       }
     });
@@ -97,5 +101,26 @@ Page({
         console.log('跳转到news页面失败')
       }
     })
+  },
+  searchThings: function (e) {
+    console.log(e.detail.value)
+    var $this = this;
+    app.util.request({
+      url: 'entry/wxapp/search',
+      data: {
+        name: e.detail.value
+      },
+      method: 'post',
+      success: function (response) {
+        console.log(response.data.data.orders)
+        let orders = response.data.data.orders
+        for (let obj of orders) {
+          obj.image = 'https://zx.sumrugh.xyz/addons/xyxz_xcx/upload/' + obj.image
+        }
+        $this.setData({
+          'orders': orders || []
+        });
+      }
+    });
   }
 });

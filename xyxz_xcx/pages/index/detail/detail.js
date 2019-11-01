@@ -32,7 +32,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+    console.log(options.id)
     this.getData(options.id);
   },
 
@@ -87,7 +87,7 @@ Page({
   getData: function(id) {
     var $this = this;
     app.util.request({
-      url: 'entry/wxapp/GetOrderDetail',
+      url: 'entry/wxapp/GetGoodsDetail',
       data: {
         id: id
       },
