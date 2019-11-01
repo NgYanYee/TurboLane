@@ -9,20 +9,16 @@ Page({
 		userInfo: {},
     multiArray: [['数码电子', '书籍', '生活用品', '化妆品', '零食', '服饰']],
     multiIndex: [0],
-    // orders: [{
-    //   image: '1.png',
-    //   publisher: 'Gemmius X',
-    //   title: '索尼——————————',
-    //   'type': '电子产品',
-    //   publishTimes: '2018`11111',
-    //   times: '111',
-    //   images: [{
-    //     url: '1.png'
-    //   }, {
-    //       url: '1.png'
-    //     }]
-    // }]
-    orders: [],
+    orders: [{
+      image: '1.png',
+      publisher: 'Gemmius X',
+      title: '索尼——————————',
+      'type': '电子产品',
+      publishTimes: '2018`11111',
+      times: '111',
+      image: '1.png'
+    }],
+    // orders: [],
     obj: {
       '0': 'digital',
       '1': 'books',
@@ -85,7 +81,7 @@ Page({
       success: function (response) {
         console.log(response.data)
         $this.setData({
-          'orders': response.data.data.orders | []
+          'orders': response.data.data || []
         });
       }
     });

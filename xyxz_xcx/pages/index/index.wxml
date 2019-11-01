@@ -36,6 +36,8 @@
         <view class='goods-name'>{{item.title}}</view>
         <view class='goods-images'>
           <image wx:for="{{ item.images }}" wx:for-item="photos" src='{{photos.url}}' wx:key="good"></image>
+
+          <image src='{{item.image}}' wx:key="good"></image>
         </view>
         <view class='goods-type'>{{item.type}}</view>
         <view class='other-imfomation'>
