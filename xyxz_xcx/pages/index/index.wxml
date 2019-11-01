@@ -29,13 +29,13 @@
     </view> -->
     <view class='item-contaner' wx:for="{{ orders }}" wx:key="unique" bindtap='navicat' data-id="{{item.id}}">
       <view class='image-header'>
-        <image src='{{item.image}}'></image> 
+        <image src='{{item.avatar}}'></image> 
       </view>
       <view class='iformation'>
         <view class='name'>{{item.publisher}}</view>
         <view class='goods-name'>{{item.title}}</view>
         <view class='goods-images'>
-          <image wx:for="{{ item.images }}" wx:for-item="photos" src='{{photos.url}}' wx:key="good"></image>
+          <image src='{{item.image}}' wx:key="good"></image>
         </view>
         <view class='goods-type'>{{item.type}}</view>
         <view class='other-imfomation'>

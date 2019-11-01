@@ -83,9 +83,13 @@ Page({
       },
       method: 'post',
       success: function (response) {
-        console.log(response.data)
+        console.log(response.data.data.orders)
+        let orders = response.data.data.orders
+        for(let obj of orders) {
+          obj.image = 'https://zx.sumrugh.xyz/addons/xyxz_xcx/upload/' + obj.image
+        }
         $this.setData({
-          'orders': response.data.data.orders | []
+          'orders': orders || []
         });
       }
     });
